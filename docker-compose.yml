@@ -1,0 +1,10 @@
+version: "3"
+services:
+  jupyter:
+    image: testimage
+    container_name: jupyter_cont
+    volumes:
+      - ./work:/work
+    ports:
+      - "8888:8888"
+    command: jupyter lab --ip=0.0.0.0 --port 8888 --allow-root --NotebookApp.token=''  --notebook-dir=/work
